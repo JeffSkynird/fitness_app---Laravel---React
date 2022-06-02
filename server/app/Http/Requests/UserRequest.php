@@ -61,11 +61,9 @@ class UserRequest extends FormRequest
     {
         return [
             'email' => 'required|email:rfc,dns|unique:users',
-            'dni'=>'required',
             'names' => 'required',
             'last_names' => 'required',
-            'password' => 'required',
-            'rol_id'=>'required'
+            'password' => 'required'
             ];
     }
 
@@ -80,7 +78,6 @@ class UserRequest extends FormRequest
             return [
                 'id' => 'required|integer|exists:users,id',
                 'email' => 'required|email:rfc,dns|unique:users,email,' . $this->id,
-                'dni'=>'required',
                 'names' => 'required',
                 'last_names' => 'required'
             ];

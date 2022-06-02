@@ -18,7 +18,7 @@ class AuthController extends Controller
             ]);
             if ($vacios->fails()) {
                 return response([
-                    'message' => "Revise los campos ingresados",
+                    'message' => "No debe dejar campos vacíos",
                     'type' => "error",
                 ]);
             }
